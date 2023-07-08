@@ -6,10 +6,11 @@ public class Coin : MonoBehaviour
 {
     public float turnSpeed = 90f;
     [SerializeField] private float _speed;
+    [SerializeField] private GameObject _coinMesh;
 
     private void Update()
     {
-        transform.Rotate(transform.position.x, 0 , turnSpeed * Time.deltaTime);
+        _coinMesh.transform.Rotate(0 , 0 , turnSpeed * Time.deltaTime);
         DestroyCoin();
     } 
 

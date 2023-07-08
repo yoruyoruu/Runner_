@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-   public GameObject coins;
+   public GameObject Coin;
    public List<Transform> spawnPoints;
    public float spawnDelay;
-   float nextSpawn = 0.0f;
+   private float _nextSpawn = 0.0f;
 
    void Update() 
     {
-        if (Time.time > nextSpawn)
+        if (Time.time > _nextSpawn)
         {
-        nextSpawn = Time.time + spawnDelay;    
-        spawnPoints = new List<Transform>(spawnPoints);
+        _nextSpawn = Time.time + spawnDelay;    
         SpawnCoins();
         }
     }
@@ -22,7 +21,7 @@ public class CoinSpawner : MonoBehaviour
     void SpawnCoins()
     {
         var spawn = Random.Range(0, spawnPoints.Count);
-        Instantiate(coins,spawnPoints[spawn].transform.position,Quaternion.identity);
+        Instantiate(Coin,spawnPoints[spawn].transform.position,Quaternion.identity);
         
     }
 }

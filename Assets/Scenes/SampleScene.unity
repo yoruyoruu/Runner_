@@ -152,12 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9412561eb4a107841b9f94bc0a48d43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: {fileID: 8463383147738670592, guid: 67a52ba449fe5cf4fbecf658f9d636f8, type: 3}
+  Coin: {fileID: 8463383147738670592, guid: 67a52ba449fe5cf4fbecf658f9d636f8, type: 3}
   spawnPoints:
   - {fileID: 1883799099}
   - {fileID: 390860001}
   - {fileID: 1043253680}
-  spawnDelay: 3
+  spawnDelay: 2
 --- !u!4 &265523096
 Transform:
   m_ObjectHideFlags: 0
@@ -844,6 +844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roadSpawner: {fileID: 411524569}
+  _rightDistantion: 2.5
+  _leftDistantion: -2.5
 --- !u!143 &1907868136
 CharacterController:
   m_ObjectHideFlags: 0
