@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private RoadSpawner _roadSpawner;        // В плеере мы будем спавнить дороги, когда он пересекает тригеры
     [SerializeField] private float _rightDistantion;
     [SerializeField] private float _leftDistantion;
+    [SerializeField] private  int _coins;
+    [SerializeField] private Text _textCoins;
    
     private void OnTriggerEnter(Collider other) 
     {
         _roadSpawner.Spawn();
+
+        if (other.gameObject.tag == "Coin")
+        {
+            _coins++;
+            _textCoins.text = _coins.ToString();
+            Destroy(other.gameObject);
+        }
     }
 
     void Update()
